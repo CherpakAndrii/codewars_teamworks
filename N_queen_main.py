@@ -62,4 +62,7 @@ def chess(s, r, c):
             q = 0
             q = fill(r, c, q)
 
-print(chess(4, 0, 2))
+f = open("new_f.txt", "a")
+f.write(chess(8, 0, 2))
+f.write("\n\n")
+f.close()
