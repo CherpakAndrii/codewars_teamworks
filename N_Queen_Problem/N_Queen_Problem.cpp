@@ -1,14 +1,14 @@
 #include <vector>
-
+#include <string>
 #include <iostream>
 using namespace std;
 
 int main()
 {
-    cout << "Hello World!\n";
+
 }
 
-char** chess(int size, int row, int column) {
+string chess(int size, int row, int column) {
     vector<vector<int>> pos;
     int num_of_queens = 0;
     char** desk = new char* [size];
@@ -18,7 +18,10 @@ char** chess(int size, int row, int column) {
             pos.push_back({ i, j });
         }
     }
-    
+    num_of_queens = fill(row, column, num_of_queens, pos, desk, size);
+    string res = search(pos, desk, num_of_queens, size);
+    if (res) return res;
+    else return "";
 }
 
 int fill(int row, int column, int num_of_queens, vector<vector<int>>& pos, char**& desk, int size) {
