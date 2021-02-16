@@ -18,11 +18,10 @@ def fill(row, column, num_of_queens, positions, desk, size):
     num_of_queens += 1
     desk[row][column] = "Q"
     positions.remove((row, column))
-    for j in range(size):
-        if desk[row][j] == 0:
-            desk[row][j] = '.'
-            positions.remove((row, j))
     for i in range(size):
+        if desk[row][i] == 0:
+            desk[row][i] = '.'
+            positions.remove((row, i))
         if desk[i][column] == 0:
             desk[i][column] = '.'
             positions.remove((i, column))

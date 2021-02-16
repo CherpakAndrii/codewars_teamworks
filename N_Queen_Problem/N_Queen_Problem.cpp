@@ -34,5 +34,10 @@ int fill(int row, int column, int num_of_queens, vector<vector<int>>& pos, char*
         }
         else i++;
     }
+    for (int j = 0; j < size; j++){
+        if (!desk[row][j]) desk[row][j] = '.';
+        if (!desk[j][column]) desk[j][column] = '.';
+    }
+
 
 }
